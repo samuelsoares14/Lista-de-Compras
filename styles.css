@@ -1,0 +1,275 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+:root {
+    --cor-fundo: #3a4750;
+    --cor-branco: #eeeeee;
+    --cor-laranja: #ea9216;
+    --cor-cinza-escuro: #313841;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 20px;
+    gap: 20px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+}
+
+.btn-adicionar-produto {
+    width: 190px;
+}
+
+.btn-adicionar-produto,
+.adicionar {
+    background-color: var(--cor-laranja);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 190px;
+    padding: 17px 20px;
+    border-radius: 50px;
+    border: 0;
+    box-shadow: var(--cor-fundo) 0 0 8px;
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    transition: all .5s ease;
+}
+
+.btn-adicionar-produto:hover,
+.adicionar:hover {
+    width: 250px;
+    letter-spacing: 3px;
+    background-color: var(--cor-cinza-escuro);
+    color: var(--cor-branco);
+    box-shadow: var(--cor-laranja) 0px 7px 29px 0px;
+}
+
+.btn-adicionar-produto:active,
+.adicionar:active {
+    letter-spacing: 3px;
+    background-color: var(--cor-laranja);
+    color: var(--cor-branco);
+    box-shadow: var(--cor-laranja) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sub-formulario{
+    display: flex;
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos Inputs*/
+
+input {
+    all: unset;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    box-shadow: 0px 2px 2px 2px var(--cor-laranja);
+    transition: border .3s ease-in-out;
+}
+
+input:focus{
+    border-color: var(--cor-laranja);
+    color: var(--cor-branco);
+}
+
+input::placeholder {
+    font-size: .9rem;
+}
+
+input::placeholder {
+    color: var(--cor-branco);
+}
+
+/*Estilo label */
+
+.grupo-nome {
+    position: relative;
+}
+
+label {
+    font-size: 1.2px;
+    color: var(--cor-laranja);
+    padding: 0 5px;
+    position: absolute;
+    transform:  translateY(-50%);
+    top: 50%;
+    left: 1em;
+    pointer-events: none;
+    transition: .3s;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+    top: 0;
+    background-color: var(--cor-fundo);
+    padding: 0 5px;
+    font-size: 0.8rem;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lista*/
+
+.section-lista{
+    margin-top: 40px;
+    display: flex;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista-produtos{
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 1fr 1fr; /* 40px para o checkbox */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/*icones de editar e excluir*/
+
+.lista-produtos.show-actions .acoes {
+  display: none;
+}
+
+/* Esconde as ações por padrão */
+.lista-produtos .acoes {
+  display: none;
+}
+
+/* Mostra quando a li tiver a classe show-actions */
+.lista-produtos.show-actions .acoes {
+  display: flex; /* ou inline-flex, ou block */
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-editar, .btn-excluir {
+    margin-left: 0;
+    color: var(--cor-laranja);
+    border: none;
+    background-color: var(--cor-branco);
+    padding: 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.acoes{
+    margin-left: 20px;
+}
+
+.acoes button:hover {
+  background-color: var(--cor-cinza-escuro);
+}
+
+/*CheckBox*/
+.checkbox-produto {
+    accent-color: var(--cor-laranja);
+    margin-left: 10px;
+    width: .5px;
+    height: 1px;
+}
+
+.checkbox-produto,
+input[type="checkbox"] {
+    width: 1px;   /* ou menor, ex: 12px */
+    height: 1px;  /* ou menor, ex: 12px */
+    accent-color: var(--cor-laranja);
+    display: block;
+}
+
+.comprado {
+    text-decoration: line-through;
+    color: #aaa;
+    opacity: 0.7;
+}
+/* Total*/
+.valor-total {
+    margin-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-laranja);
+    font-size: 2rem;
+    background-color: var(--cor-cinza-escuro);
+    padding: 17px 20px;
+    border-radius: 50px;
+    box-shadow: var(--cor-laranja) 2px 2px 8px;
+    font-size: 15px;
+    transition: all .5s ease;
+}
+
+@media (max-width: 480px) {
+    .formulario .hidden{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .sub-formulario{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .lista-cabecalho,
+    .lista-produtos {
+        display: grid;
+        grid-template-columns: 40px 1.2fr .8fr .9fr 1fr; 
+        /* checkbox | produto | qtd | preço | total | ações */
+        align-items: center;
+        gap: 8px;
+    }
+    .valor-total{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cor-laranja);
+        font-size: 2rem;
+        background-color: var(--cor-cinza-escuro);
+        padding: 17px 20px;
+        border-radius: 50px;
+        box-shadow: var(--cor-laranja) 2px 2px 8px;
+        font-size: 15px;
+        transition: all .5s ease;
+    }
+    
+}

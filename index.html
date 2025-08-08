@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo">Lista de Compras</h1>
+        <button class="btn-adicionar-produto" id="btn-adicionar-produto" type="button">Adicionar Produto</button>
+    </header>
+    <main class="main">
+        <div>
+            <form class="formulario hidden" id="formulario">
+                <div class="sub-formulario">
+                    <div class="grupo-nome">
+                        <input class="produto" id="produto" type="text" required placeholder="">
+                        <label class="label" for="text">Produto</label>
+                    </div>
+                    <div class="grupo-nome">
+                        <input class="quantidade" id="quantidade" type="number" required placeholder="">
+                        <label for="number">Quantidade</label>
+                    </div>
+                    <div class="grupo-nome">
+                        <input class="valor" id="valor" step="0.01" type="number" placeholder="">
+                        <label for="number">Preço</label>
+                    </div>
+                </div>
+                <button class="adicionar" id="adicionar">Adicionar</button>
+            </form>
+        </div>
+        <section class="section-lista" id="lista-produtos">
+            <ul class="lista">
+                <li class="lista-produtos">
+                    <p class="listaProdutos"></p>
+                    <p class="listaProdutos">Produto</p>
+                    <p class="listaQuantidade">Quantidade</p>
+                    <p class="listaPreco">Preço</p>
+                    <p class="listaValorTotal">Valor Total</p>
+                </li>
+            </ul>
+        </section>
+        <div class="valor-total">
+            <h2 class="total-nome">Valor Total: </h2>
+            <p class="total-valor" id="valor-total"></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
