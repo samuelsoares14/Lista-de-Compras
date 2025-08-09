@@ -105,9 +105,6 @@ input:focus{
 
 input::placeholder {
     font-size: .9rem;
-}
-
-input::placeholder {
     color: var(--cor-branco);
 }
 
@@ -206,13 +203,13 @@ input:not(:placeholder-shown) ~ label {
     accent-color: var(--cor-laranja);
     margin-left: 10px;
     width: .5px;
-    height: 1px;
+    height: 18px;
 }
 
 .checkbox-produto,
 input[type="checkbox"] {
-    width: 1px;   /* ou menor, ex: 12px */
-    height: 1px;  /* ou menor, ex: 12px */
+    width: 18px;   /* ou menor, ex: 12px */
+    height: 18px;  /* ou menor, ex: 12px */
     accent-color: var(--cor-laranja);
     display: block;
 }
@@ -239,13 +236,7 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 480px) {
-    .formulario .hidden{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .sub-formulario{
+        .sub-formulario{
         display: flex;
         flex-direction: column;
         gap: 20px;
